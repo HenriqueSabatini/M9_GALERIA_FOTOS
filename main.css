@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color:blueviolet; /*cor de fundo*/
+    padding: 16px 0; /*espaçamento*/
+    color:#fff;/*cor da finte*/
+    display: flex; /*FLEX para o botão ficar ao lado do titulo*/
+    border-bottom: 16px solid rgb(31, 2, 58); /*borda mais escura abaixo do titulo*/
+    justify-content: center; /*centralizar na pagina*/
+    text-transform: uppercase; /*deixa todo titulo MAIUSCULO*/
+    font-style: italic; /*deixa o titulo em italico*/
+}
+
+header button{
+    margin-left: 16px; /*margem a esquerda do botão*/
+}
+
+form {
+    background-color:lightblue; /*cor de fundo do formulario*/
+    padding: 24px 0; /*espaçamento*/
+    text-align: center; /*centralizar na pagina*/
+    display: none; /*colocamos none para o formulario nao aparecer inicialmente, e aparecer somente quando quiser colocar imagem, (animação jquery)*/
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input, button {
+    padding: 8px; /*Tamanho dos botoes e espaços digitaveis*/
+}
+
+button{
+    background-color: darkgreen; /*cor dos botoes*/
+    border: none; /*tirar a borda*/
+    cursor: pointer; /*quando o mouse passar no botão o cursor muda para maozinha*/
+    font-weight: bold; /*deixa negrito*/
+    text-transform: uppercase; /*deixa todo titulo MAIUSCULO*/
+    color: #fff;
+}
+
+#botao-cancelar{
+    background-color:red;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap; /*Wrap tem a função de quando ja estiver prechido a linha ele cria outra abaixo*/
+}
+
+ul li{
+    max-width: 25%; /*cada imagem oculpa 25%*/
+    list-style: none; /*tira os topicos dos textos*/
+    position: relative; /*Ja colocamos o "absolute" no texto dessa forma o texto fica sovbre a imagem*/
+    max-height: 280px; /*definimos uma linha limete para o tamanho da imagem - e abaixo vamos definir tudo que passa dessa linha nao sera exibido*/
+    overflow-y: hidden; /*Aqui definimos que as imagens que passarem de 280px no eixo vertical (y) sera ocultado (hidden)*/
+}
+
+ul li img {
+    width: 100%; /*imagem oculpa 100% do limiete do espaço pra ela (25%)*/
+    height: 100%;
+}
+
+.overlay-imagem-link { /*criamos a "classe overlay-imagem-link" para modificar todas as imagens ao mesmo tempo*/
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7); /*funso quase transparente*/
+    position: absolute; /*Essa função serve para definir ontem queremos o texto colocamos o "absolute" aqui e vamos colocar o "relative" na imagem, assim o texto fica sobre a imgaem*/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /*aqui definifos que o texto com o link nao vai aparecer com opacity 0, para que apareça somente quando colocar o mouse em cima da imagem hover feito na linha 84 85 86*/
+    transition: all ease .8s; /*Aqui definimos o tempo que vai aparecer gradativamente o texto com o link*/
+}
+
+.overlay-imagem-link a { /*Style do link*/
+    color: #fff; 
+    text-decoration: none; /*remove inderline*/
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1; /*usamos o hover para função de passar o mouse em cima a opacity muda de 0 (linha 76) para 1*/
+}
+
+
